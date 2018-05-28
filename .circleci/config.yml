@@ -32,7 +32,10 @@ jobs:
           name: Set up NPM
           command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
           when: on_success
-      
+
+      - run: sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}
+      - run: sudo chown -R $(whoami) "$HOME/.npm"
+      - run: npm cache verify
       - run: sudo npm i -g --unsafe-perm decentraland@next
       - run: wget https://dist.ipfs.io/go-ipfs/v0.4.14/go-ipfs_v0.4.14_linux-amd64.tar.gz
       - run: tar xvfz go-ipfs_v0.4.14_linux-amd64.tar.gz
