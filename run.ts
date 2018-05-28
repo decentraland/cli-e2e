@@ -17,8 +17,7 @@ tmpTest(async (dirPath, done) => {
     .endWhen(/Success! Run 'dcl preview' to see your scene/)
     .on("err", e => console.log(e))
     .on("end", async () => {
-      console.log("works");
-      done();
+      Commando.quit();
     });
 }).then(() => {
   process.exit(1);

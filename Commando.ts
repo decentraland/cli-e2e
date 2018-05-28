@@ -46,6 +46,10 @@ class Commando extends EventEmitter {
     this.proc.on("close", () => this.emit("end"));
   }
 
+  static quit() {
+    process.exit(0);
+  }
+
   when(
     pattern: string | RegExp,
     response: (msg: string) => string,
