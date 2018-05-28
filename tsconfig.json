@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2015",
+    "diagnostics": true,
+    "outDir": "build",
+    "baseUrl": ".",
+    "moduleResolution": "node",
+    "stripInternal": true,
+    "pretty": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "noUnusedLocals": true,
+    "plugins": [{ "name": "tslint-language-service" }]
+  },
+  "exclude": ["build", "node_modules"]
+}
